@@ -19,41 +19,7 @@ double fc_local_simple(const double y[], const int size, const int train_length)
     return m;
 }
 
-// double FC_LocalSimple_mean_tauresrat(const double y[], const int size, const int train_length,const double * autocorrs)
-// {
-    
-//     // NaN check
-//     for(int i = 0; i < size; i++)
-//     {
-//         if(isnan(y[i]))
-//         {
-//             return NAN;
-//         }
-//     }
-    
-//     double * res = malloc((size - train_length) * sizeof *res);
-    
-//     for (int i = 0; i < size - train_length; i++)
-//     {
-//         double yest = 0;
-//         for (int j = 0; j < train_length; j++)
-//         {
-//             yest += y[i+j];
-            
-//         }
-//         yest /= train_length;
-        
-//         res[i] = y[i+train_length] - yest;
-//     }
-    
-//     double resAC1stZ = co_firstzero(res, size - train_length, size - train_length, autocorrs);
-//     double yAC1stZ = co_firstzero(y, size, size,autocorrs);
-//     double output = resAC1stZ/yAC1stZ;
-    
-//     free(res);
-//     return output;
-    
-// }
+
 
 
 
@@ -117,38 +83,6 @@ double FC_LocalSimple_mean_tauresrat(const double y[], const int size, const int
 
 
 
-// double FC_LocalSimple_mean_stderr(const double y[], const int size, const int train_length)
-// {
-//     // NaN check
-//     for(int i = 0; i < size; i++)
-//     {
-//         if(isnan(y[i]))
-//         {
-//             return NAN;
-//         }
-//     }
-    
-//     double * res = malloc((size - train_length) * sizeof *res);
-    
-//     for (int i = 0; i < size - train_length; i++)
-//     {
-//         double yest = 0;
-//         for (int j = 0; j < train_length; j++)
-//         {
-//             yest += y[i+j];
-            
-//         }
-//         yest /= train_length;
-        
-//         res[i] = y[i+train_length] - yest;
-//     }
-    
-//     double output = stddev(res, size - train_length);
-    
-//     free(res);
-//     return output;
-    
-// }
 
 
 
